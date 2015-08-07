@@ -38,8 +38,7 @@
          for (var i = 0, len = changePizzaSizes.length; i < len; i++) {
             changePizzaSizes[i].style.width = newwidth;
             }
-
-Checked console.log and less than 5 milliseconds
+        Checked console.log and less than 5 milliseconds
 
 3. Move complete pizzaDiv statement out of the loop
 
@@ -73,7 +72,7 @@ Checked console.log and less than 5 milliseconds
             phase = Math.sin(scroll + (i % 5));
             items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     }
-5. document.addEventListener('DOMContentLoaded', function() {
+5.  document.addEventListener('DOMContentLoaded', function() {
 
          document.addEventListener('DOMContentLoaded', function() {
          'use strict'
@@ -96,4 +95,4 @@ Checked console.log and less than 5 milliseconds
          updatePositions();
       });
    
-6. All office hours were reviewed and comments taken into consideration
+6.  All office hours were reviewed and comments taken into consideration
