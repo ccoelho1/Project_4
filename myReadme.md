@@ -1,8 +1,9 @@
-File Index.html
-File Project_2048.html
-File project-mobile.html
-File project-webperf.html
+####Website Performance Optimization portfolio project- ccoelho1
 
+##File Index.html
+##File Project_2048.html
+##File project-mobile.html
+##File project-webperf.html
 
 1. inlined style.css
 2. added media print to script <link href="css/print.css" rel="stylesheet" media="print"> so this will only run when requested to print
@@ -14,17 +15,17 @@ File project-webperf.html
 6. Check page on Page speed insights and have >90 
 
 
-File View/css/Style.css
+##File View/css/Style.css
 
 1. added font size to h1, h2 & h3
 
-File View/pizza.html
+##File View/pizza.html
 
 1. inlined View/css/style.css
 2. Added async to the scripts to avoid the completion of one to go to another
 <script type="text/javascript" aync src="js/main.js"></script>
 
-File view/js/main.js
+##File view/js/main.js
 
 1. added the 'use strict' tag through out main.js ;
 
