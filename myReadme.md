@@ -103,4 +103,5 @@ File view/js/main.js
            updatePositions();
            });
 
-  6. All office hours were reviewed and comments taken into consideration
+
+6. All office hours were reviewed and comments taken into consideration
