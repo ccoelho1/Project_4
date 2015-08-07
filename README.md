@@ -49,26 +49,26 @@ Checked console.log and less than 5 milliseconds
          }
 
 4. function updatePositions()
-         function updatePositions() { 
-         'use strict'
+          function updatePositions() { 
+          'use strict'
           frame++; 
-         window.performance.mark("mark_start_frame");
-         //changed from document.querySelectorAll('.mover') to document.getElementsByClassName("mover") 
+          window.performance.mark("mark_start_frame");
+          //changed from document.querySelectorAll('.mover') to document.getElementsByClassName("mover") 
           var items = document.getElementsByClassName("mover");
-         // remove scrolltop from loop 
-         var scroll = (document.body.scrollTop / 1250);
-        //changed code to recommended by reviewer, but I still see a problem with greater than 60 fps
-        /*var phase = []; 
-         for (var i = 0; i < 5; i++) {
+          // remove scrolltop from loop 
+          var scroll = (document.body.scrollTop / 1250);
+          //changed code to recommended by reviewer, but I still see a problem with greater than 60 fps
+          /*var phase = []; 
+          for (var i = 0; i < 5; i++) {
             phase.push(Math.sin(scroll + i) * 100);
-        }
-        for (var i = 0, max = items.length; i < max; i++) {
+          }
+          for (var i = 0, max = items.length; i < max; i++) {
             items[i].style.left = items[i].basicLeft + phase[i%5] + 'px';
-        }*/
-        //going back to original code but remove items.length and phase from loop
-        var pizzaLength = items.length;
-        var phase;
-         for (var i = 0; i < pizzaLength; i++) {
+          }*/
+          //going back to original code but remove items.length and phase from loop
+          var pizzaLength = items.length;
+          var phase;
+          for (var i = 0; i < pizzaLength; i++) {
             phase = Math.sin(scroll + (i % 5));
             items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     }
