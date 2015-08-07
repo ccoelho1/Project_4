@@ -1,4 +1,4 @@
-####Website Performance Optimization portfolio project- ccoelho1
+#Website Performance Optimization portfolio project- ccoelho1 8/7/2015
 
 ##File Index.html
 ##File Project_2048.html
