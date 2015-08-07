@@ -446,10 +446,16 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+
+    //took all 3 statements out of the loop
+    //also changed from document.querySelectorAll to document.getElementsByClassName
+  var changePizzaSizes = document.getElementsByClassName("randomPizzaContainer");
+  var dx = determineDx(changePizzaSizes[0], size);
+  var newwidth = (changePizzaSizes[0].offsetWidth + dx) + 'px';
+
+    for (var i = 0; i < changePizzaSizes; i++) {
+     changePizzaSizes[i].style.width = newwidth;
+
     }
   }
 
@@ -465,10 +471,14 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
-  pizzasDiv.appendChild(pizzaElementGenerator(i));
+//tool pizzaDiv out of the loop
+var pizzasDiv;
+//Tried to move PizzaDiv out of the loop but there is better performance with the loop
+    for (var i = 2; i < 100; i++) {  
+      pizzasDiv = document.getElementById("randomPizzas");
+      pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
+
 
 // User Timing API again. These measurements tell you how long it took to generate the initial pizzas
 window.performance.mark("mark_end_generating");
@@ -494,14 +504,29 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 function updatePositions() {
 frame++;
 window.performance.mark("mark_start_frame");
-var items = document.querySelectorAll('.mover');
+//changed from document.querySelectorAll('.mover') to document.getElementsByClassName("mover")
+var items = document.getElementsByClassName("mover");
 // remove scrolltop from loop
 var scroll = (document.body.scrollTop / 1250);
 
-for (var i = 0; i < items.length; i++) {
-var phase = Math.sin(scroll + (i % 5));
-items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-} 
+//changed code to recommended by reviewer, but I still see a problem with greater than 60 fps
+/*var phase = []; 
+ for (var i = 0; i < 5; i++) {
+    phase.push(Math.sin(scroll + i) * 100);
+}
+for (var i = 0, max = items.length; i < max; i++) {
+    items[i].style.left = items[i].basicLeft + phase[i%5] + 'px';
+}*/
+
+//going back to original code but remove items.length and phase from loop
+var pizzaLength = items.length;
+var phase;
+
+  for (var i = 0; i < pizzaLength; i++) {
+    phase = Math.sin(scroll + (i % 5));
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+}
+
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
@@ -519,6 +544,8 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+
+
   //changed from 200 to 50
   for (var i = 0; i < 50; i++) {
     var elem = document.createElement('img');
