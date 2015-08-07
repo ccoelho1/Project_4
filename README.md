@@ -48,7 +48,8 @@ Checked console.log and less than 5 milliseconds
             pizzasDiv.appendChild(pizzaElementGenerator(i));
          }
 
-4. function updatePositions()
+4. function updatePositions(){
+
           function updatePositions() { 
           'use strict'
           frame++; 
