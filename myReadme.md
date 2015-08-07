@@ -81,6 +81,7 @@ File view/js/main.js
             }
 
 5. document.addEventListener('DOMContentLoaded', function() {
+           
            document.addEventListener('DOMContentLoaded', function() {
            'use strict'
            var cols = 8;
