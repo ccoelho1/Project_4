@@ -65,11 +65,9 @@ Checked console.log and less than 5 milliseconds
         for (var i = 0, max = items.length; i < max; i++) {
             items[i].style.left = items[i].basicLeft + phase[i%5] + 'px';
         }*/
-
         //going back to original code but remove items.length and phase from loop
         var pizzaLength = items.length;
         var phase;
-
          for (var i = 0; i < pizzaLength; i++) {
             phase = Math.sin(scroll + (i % 5));
             items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
