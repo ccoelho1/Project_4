@@ -1,5 +1,7 @@
 ##Website Performance Optimization portfolio project- ccoelho1 8/7/2015
 
+Please visit my GitHub page (https://github.com/ccoelho1/Project_4.git)" to run this project go to index.html to verify the speed of the page. I used google PageSpeed Insights and I get speed of 95/100 for mobile with user experience of 100/100 and for desktop I get 93/100. This page will also take you to all other sections of the program including Pizza.html. Numerous optimizations were done in file view/js/main.js to meet the reqirements of 60 FPS when scrolling and 5 ms when resizing the pizzas. Please see below for more detail:
+
 ###File Index.html
 ###File Project_2048.html
 ###File project-mobile.html
